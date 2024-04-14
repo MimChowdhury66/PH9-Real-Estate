@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 const PropertyCard = ({ property }) => {
     // console.log(property);
-    const { image, estate_title, segment_name, status, area, location, facilities, description, price } = property;
+    const { image, estate_title, segment_name, status, area, location, facilities, description, price, id } = property;
     return (
         <div>
             <div className="card h-[100%]  bg-base-100 shadow-xl">
@@ -23,7 +24,7 @@ const PropertyCard = ({ property }) => {
                     <p> <span className="text-2xl font-bold">Price:</span> {price} </p>
 
                     <div className="card-actions justify-center mt-5">
-                        <button className="btn btn-outline btn-primary">View Property</button>
+                        <Link to={`/property/${id}`}>                        <button className="btn btn-outline btn-primary">View Property</button></Link>
                     </div>
                 </div>
             </div>

@@ -10,6 +10,7 @@ import ErrorPage from './pages/EorrorPage/ErrorPage';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import PropertyDetails from './pages/PropertyDetails/PropertyDetails';
 
 
 
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>
 
+      },
+      {
+        path: '/property/:id',
+        element: <PropertyDetails></PropertyDetails>,
+        loader:()=>fetch('/property.json')
       },
       {
         path: '/login',
