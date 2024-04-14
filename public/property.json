@@ -1,0 +1,82 @@
+[
+      {
+        "type": "Premium",
+        "image":"https://i.ibb.co/ZTXqCTQ/SOHL0122005-780x440-mobile.jpg",
+        "estate_title": "Beautiful Family Home in Suburbia",
+        "id": "SFH001",
+        "segment_name": "Single-family home ",
+        "description": "A spacious single-family home with a private yard, located in a peaceful suburban neighborhood.",
+        "price": "$500,000",
+        "status": "sale",
+        "area": "2500 sq ft",
+        "location": "Suburban area, City X",
+        "facilities": ["Living room", "Backyard", "Garage"]
+      },
+      {
+        "type": "Luxury",
+        "image":"https://i.ibb.co/Rv7BYxD/images.jpg",
+        "estate_title": "Modern Townhouse in Urban Center",
+        "id": "TH002",
+        "segment_name": " Townhouse ",
+        "description": "Contemporary townhouse with multiple floors and shared amenities, located in the heart of the city.",
+        "price": "$700,000",
+        "status": "sale",
+        "area": "1800 sq ft",
+        "location": "Downtown, City Y",
+        "facilities": ["Shared pool", "Fitness center", "Private patio"]
+      },
+      {
+        "type": "Standard",
+        "image":"https://i.ibb.co/CzF4b9S/images-1.jpg",
+        "estate_title": "City View Apartment",
+        "id": "APT003",
+        "segment_name": "Apartment ",
+        "description": "A cozy apartment with stunning city views, situated in a bustling urban area.",
+        "price": "$1,500/month",
+        "status": "rent",
+        "area": "800 sq ft",
+        "location": "Urban area, City Z",
+        "facilities": ["Open kitchen", "Balcony", "On-site laundry"]
+      },
+      {
+        "type": "Economy",
+        "image":"https://i.ibb.co/gRtHGRB/download.jpg",
+        "estate_title": "Student Residence near Campus",
+        "id": "STU004",
+        "segment_name": "Student housing ",
+        "description": "Affordable student housing within walking distance of campus, offering furnished rooms and study areas.",
+        "price": "$800/month",
+        "status": "rent",
+        "area": "1200 sq ft",
+        "location": "University district, City W",
+        "facilities": ["Study lounge", "Shared kitchen", "Wi-Fi"]
+      },
+      {
+        "type": "Exclusive",
+        "image":"https://i.ibb.co/bBD57m2/images-2.jpg",
+        "estate_title": "Retirement Village Oasis",
+        "id": "SLC005",
+        "segment_name": "Senior living community ",
+        "description": "A tranquil senior living community with various amenities and healthcare services for a comfortable retirement.",
+        "price": "$3,000/month",
+        "status": "rent",
+        "area": "1500 sq ft",
+        "location": "Scenic area, City V",
+        "facilities": ["Assisted living options", "Recreational activities", "Gardens"]
+      },
+      {
+        "type": "Premium",
+        "image":"https://i.ibb.co/Rz9yhkm/download-1.jpg",
+        "estate_title": "Seaside Retreat",
+        "id": "VR006",
+        "segment_name": "Vacation rental",
+        "description": "A luxurious vacation rental with breathtaking ocean views, perfect for a relaxing getaway.",
+        "price": "$300/night",
+        "status": "rent",
+        "area": "2000 sq ft",
+        "location": "Beachfront, Coastal City",
+        "facilities": ["Private beach access", "Swimming pool", "Outdoor dining area"]
+      }
+    ]
+  
+  
