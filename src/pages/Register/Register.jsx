@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Register = () => {
     return (
         <div className="mt-3">
+            <Helmet>
+                <title>Property Portal | Register</title>
+            </Helmet>
             <div className="container mx-auto  w-full max-w-md p-8 space-y-3 rounded-xl bg-slate-200 ">
                 <h1 className="text-2xl font-bold text-center">Please Register Here</h1>
                 <form noValidate="" action="" className="space-y-6">

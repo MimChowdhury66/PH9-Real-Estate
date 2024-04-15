@@ -11,6 +11,8 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import PropertyDetails from './pages/PropertyDetails/PropertyDetails';
+import { HelmetProvider } from 'react-helmet-async';
+import Services from './pages/Services/Services';
 
 
 
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: '/property/:id',
         element: <PropertyDetails></PropertyDetails>,
-        loader:()=>fetch('/property.json')
+        loader: () => fetch('/property.json')
       },
       {
         path: '/login',
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/service',
+        element: <Services></Services>
       }
     ]
   },
@@ -44,6 +50,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+
+    </HelmetProvider>
   </React.StrictMode>,
 )

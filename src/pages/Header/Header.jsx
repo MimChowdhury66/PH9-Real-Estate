@@ -15,7 +15,7 @@ const Header = () => {
                         <li><NavLink to="/service">Legal Service</NavLink></li>
                     </ul>
                 </div>
-                <a className=" text-2xl font-bold">Property Portal</a>
+                <a className=" text-2xl font-bold">Property <span className="text-sky-500">Portal</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

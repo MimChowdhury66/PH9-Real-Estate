@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import PropertyCard from "../PropertyCard/PropertyCard";
+import 'animate.css';
 
 const Cards = () => {
     const [properties, setProperties] = useState([]);
@@ -16,7 +17,7 @@ const Cards = () => {
     return (
         <div className="mt-10">
             <div className=" text-center mb-5">
-                <h1 className="text-xl lg:text-5xl font-semibold">Rent or Sell
+                <h1 className="text-xl lg:text-5xl font-semibold animate__animated animate__backInDown">Rent or Sell
                     Property Online </h1>
                 <p className="mt-2">Looking to sell property online or are you in search of tenants? <br />
                     Do it with ease with the largest real estate marketplace in
