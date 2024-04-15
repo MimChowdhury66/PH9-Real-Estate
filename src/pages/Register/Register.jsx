@@ -1,7 +1,16 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import { FaEye ,FaEyeSlash  } from "react-icons/fa";
 
 const Register = () => {
+    const [showPassword, setShowPassword] = useState(false);
+
+
+
+
+
+
     return (
         <div className="mt-3">
             <Helmet>
@@ -24,8 +33,14 @@ const Register = () => {
                     </div>
                     <div className="space-y-1 text-sm">
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
-                        <input type="password" required name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600" />
-                        
+                        <div className="relative ">
+                        <input type={showPassword ? "text" : "password"} required name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600" />
+                        <span className="absolute top-4 right-4" onClick={() => setShowPassword(!showPassword)}>
+                            {
+                                showPassword?<FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                            }
+                        </span>
+                        </div>
                     </div>
                     <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-slate-400">Register</button>
                 </form>
