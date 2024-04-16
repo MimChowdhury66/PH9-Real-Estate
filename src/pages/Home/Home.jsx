@@ -8,6 +8,8 @@ const Home = () => {
             <Helmet>
                 <title>Property Portal | Home</title>
             </Helmet>
+            
+
             <Banner></Banner>
             <Cards></Cards>
         </div>

@@ -11,8 +11,9 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import PropertyDetails from './pages/PropertyDetails/PropertyDetails';
-import { HelmetProvider } from 'react-helmet-async';
 import Services from './pages/Services/Services';
+import { HelmetProvider } from 'react-helmet-async';
+import FirebaseProvider from './FirebaseProvider/FirebaseProvider';
 
 
 
@@ -50,9 +51,20 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HelmetProvider>
+
+    {/* <FirebaseProvider>
       <RouterProvider router={router} />
+    </FirebaseProvider> */}
+
+
+    <HelmetProvider>
+      <FirebaseProvider>
+        <RouterProvider router={router} />
+
+      </FirebaseProvider>
 
     </HelmetProvider>
+
+
   </React.StrictMode>,
 )

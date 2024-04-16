@@ -13,7 +13,7 @@ const PropertyDetails = () => {
     return (
         <div>
             <Helmet>
-                <title>Property Portal | Property Details</title>
+                <title>Property Portal | {property.estate_title}</title>
             </Helmet>
 
             <section>

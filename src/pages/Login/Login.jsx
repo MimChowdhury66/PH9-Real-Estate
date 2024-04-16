@@ -1,14 +1,27 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
 
 
     const [showPassword, setShowPassword] = useState(false);
 
-
+    const { signIn } = useContext(AuthContext);
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm()
+    const onSubmit = data => {
+        // console.log(data)
+        signIn(data.Email, data.password)
+            .then(result => console.log(result))
+    }
 
     return (
         <div className="mt-3">
@@ -17,15 +30,17 @@ const Login = () => {
             </Helmet>
             <div className="container mx-auto  w-full max-w-md p-8 space-y-3 rounded-xl bg-slate-200 ">
                 <h1 className="text-2xl font-bold text-center">Please Login Here</h1>
-                <form noValidate="" action="" className="space-y-6">
+                <form onSubmit={handleSubmit(onSubmit)} noValidate="" action="" className="space-y-6">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="username" className="block dark:text-gray-600">Email</label>
-                        <input type="email" required name="email" id="username" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600" />
+                        <input type="email" required name="email" id="username" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600"
+                            {...register("Email")} />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
                         <div className="relative ">
-                            <input type={showPassword ? "text" : "password"} required name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600" />
+                            <input type={showPassword ? "text" : "password"} required name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600"
+                                {...register("password")} />
                             <span className="absolute top-4 right-4" onClick={() => setShowPassword(!showPassword)}>
                                 {
                                     showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>

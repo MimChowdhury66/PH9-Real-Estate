@@ -1,45 +1,66 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { FaEye ,FaEyeSlash  } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
+import { useForm } from "react-hook-form";
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
 
+    const {createUser} = useContext(AuthContext)
 
 
-
-
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm()
+    
+    const onSubmit = data => {
+        // console.log(data)
+        createUser(data.Email, data.password)
+        .then(result=>console.log(result))
+    }
+    
 
     return (
+
         <div className="mt-3">
+
             <Helmet>
                 <title>Property Portal | Register</title>
             </Helmet>
             <div className="container mx-auto  w-full max-w-md p-8 space-y-3 rounded-xl bg-slate-200 ">
                 <h1 className="text-2xl font-bold text-center">Please Register Here</h1>
-                <form noValidate="" action="" className="space-y-6">
+                <form onSubmit={handleSubmit(onSubmit)} noValidate="" action="" className="space-y-6">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="name" className="block dark:text-gray-600">Name</label>
-                        <input type="text" required name="name" id="username" placeholder="Name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600" />
+                        <input type="text" required name="name" id="username" placeholder="Name" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600"
+                        {...register("FullName")} 
+                        />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label htmlFor="photo" className="block dark:text-gray-600">Photo URL</label>
-                        <input type="text" required name="photo" id="username" placeholder="Photo URL" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600" />
+                        <input type="text"  name="photo" id="username" placeholder="Photo URL" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600"
+                         {...register("PhotoURL")}/>
                     </div>
                     <div className="space-y-1 text-sm">
                         <label htmlFor="email" className="block dark:text-gray-600">Email</label>
-                        <input type="email" required name="email" id="username" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600" />
+                        <input type="email" required name="email" id="username" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600"
+                         {...register("Email")}/>
                     </div>
                     <div className="space-y-1 text-sm">
                         <label htmlFor="password" className="block dark:text-gray-600">Password</label>
                         <div className="relative ">
-                        <input type={showPassword ? "text" : "password"} required name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600" />
-                        <span className="absolute top-4 right-4" onClick={() => setShowPassword(!showPassword)}>
-                            {
-                                showPassword?<FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
-                            }
-                        </span>
+                            <input type={showPassword ? "text" : "password"} required name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-default-600"
+                             {...register("password")}/>
+                            <span className="absolute top-4 right-4" onClick={() => setShowPassword(!showPassword)}>
+                                {
+                                    showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                }
+                            </span>
                         </div>
                     </div>
                     <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-slate-400">Register</button>
