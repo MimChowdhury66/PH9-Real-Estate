@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import background from '../../../public/cool-background.png'
+import { useContext } from "react";
+import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 
 const Header = () => {
+    const { logout, user } = useContext(AuthContext)
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -26,7 +29,25 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login'><button style={{ backgroundImage: `url(${background})` }} className="btn text-xl">Log In</button></Link>
+                {
+                    user?.email ? <div className="dropdown dropdown-end tooltip tooltip-bottom" data-tip={user.displayName}>
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar " >
+                            <div className="w-10 rounded-full "  >
+                                <img src={user.photoURL} alt="" />
+
+                            </div>
+                        </label>
+                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><button onClick={logout} className="btn btn-sm btn-ghost">Logout</button></li>
+                        </ul>
+                    </div> :
+
+
+
+                        <Link to='/login'><button style={{ backgroundImage: `url(${background})` }} className="btn text-xl">Log In</button></Link>
+
+                }
+
             </div>
         </div>
     );
