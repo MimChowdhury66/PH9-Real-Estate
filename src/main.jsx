@@ -19,6 +19,7 @@ import FirebaseProvider from './FirebaseProvider/FirebaseProvider';
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+import UpdateProfile from './pages/UpdateProfile/UpdateProfile';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: '/service',
         element: <ProtectedRoute><Services></Services></ProtectedRoute>
+      },
+      {
+        path: '/updateProfile',
+        element: <UpdateProfile></UpdateProfile>
       }
     ]
   },
