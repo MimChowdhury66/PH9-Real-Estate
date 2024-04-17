@@ -25,12 +25,3 @@ Live site url:
  1.  User can update information in this route
 
 
-## npm package name which is used for the challenges task
-1. Animate.css
-2. Swipper slider
-<<<<<<< HEAD
-3. React-hook-form
-=======
-3. React-hook-form
-
->>>>>>> fa2c11a93db41f20d0ba375d420082cf5896d1a1
