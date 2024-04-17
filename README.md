@@ -23,3 +23,10 @@ Live site url:
 
 - **Update Profile** 
  1.  User can update information in this route
+
+
+## npm package name which is used for the challenges task
+1. Animate.css
+2. Swipper slider
+3. React-hook-form
+
