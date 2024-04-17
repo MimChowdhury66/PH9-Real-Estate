@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -19,19 +20,39 @@ const Register = () => {
         formState: { errors },
     } = useForm()
 
+
     const onSubmit = data => {
         console.log(data)
+        // console.log(typeof data.password, data.password.length)
+
+        if (!/[A-Z]/.test(data.password)) {
+            toast.error('Your Password must have an Uppercase letter');
+            return;
+        }
+        else if (!/[a-z]/.test(data.password)) {
+            toast.error('Your Password must have a Lowercase letter');
+            return;
+        }
+        else if (data.password.length < 6) {
+            toast.error('Password should be at least 6 character');
+            return;
+        }
         createUser(data.Email, data.password)
             .then(() => {
                 // navigate('/')
                 updateUserProfile(data.FullName, data.PhotoURL)
                     .then(() => {
+                        toast.success('Register Successfully', {
+                            autoClose: 5000,
+                        });
                         navigate('/')
                     })
 
             })
+            .catch(() => {
+                toast.error('This account is already registered')
+            })
     }
-
 
     const handleSocialLogin = socialProvider => {
         socialProvider()

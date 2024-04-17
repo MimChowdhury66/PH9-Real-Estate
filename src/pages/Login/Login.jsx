@@ -4,6 +4,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../FirebaseProvider/FirebaseProvider";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const Login = () => {
 
@@ -24,9 +25,16 @@ const Login = () => {
         // console.log(data)
         signIn(data.Email, data.password)
             .then(result => {
+
                 if (result.user) {
+                    toast.success('Login Successfully', {
+                        autoClose: 5000,
+                    });
                     navigate(location?.state || '/')
                 }
+            })
+            .catch(() => {
+                toast.error('This account does not matched. Please Register First')
             })
     }
 

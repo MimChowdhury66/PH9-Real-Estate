@@ -16,7 +16,9 @@ import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 import { HelmetProvider } from 'react-helmet-async';
 import FirebaseProvider from './FirebaseProvider/FirebaseProvider';
 
+import { ToastContainer, toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
@@ -65,6 +67,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       </FirebaseProvider>
 
     </HelmetProvider>
+    <ToastContainer />
 
 
   </React.StrictMode>,
