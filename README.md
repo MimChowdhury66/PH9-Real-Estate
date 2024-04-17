@@ -1,8 +1,25 @@
-# React + Vite
+# Property Portal
+Live site url: 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Motto- Discover immersive virtual property tours. Explore properties from the comfort of your home
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Features and Characteristic-
+- **Home** 
+1. Presents a Navbar including user information
+2. A Banner 
+2. Property Card Section with available property which is up for sell or rent
+
+- **Legal Service** 
+1. Contains some faqs 
+2. will know some important frequently asked questions about services
+
+- **Login page** 
+1. Successfully registered user can redirect to the protected route
+2. user can login using Google and GitHub
+
+- **Register Page** 
+1. First time user must register here
+
+- **Update Profile** 
+ 1.  User can update information in this route
