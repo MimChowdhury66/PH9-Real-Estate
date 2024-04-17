@@ -17,7 +17,24 @@ const PropertyDetails = () => {
             </Helmet>
 
             <section>
-                <img src={property.image} alt="" className="lg:w-full lg:h-[400px] md:w-full md:h-[300px] mx-auto mb-5 mt-5 dark:bg-gray-500 rounded-lg shadow-md lg:mt-10" />
+                <section className="dark:bg-gray-100 dark:text-gray-800">
+                    <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+                        <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+                            <h1 className="text-5xl font-bold leading-none sm:text-6xl">{property.location}
+                            </h1>
+                            <p className="mt-6 mb-8 text-lg sm:mb-12">A luxurious vacation rental with breathtaking ocean views, perfect for a relaxing getaway.
+
+
+                            </p>
+
+                        </div>
+                        <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 ">
+                            <img  src={property.image} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128 rounded-full" />
+                        </div>
+                    </div>
+                </section>
+                {/* main */}
+                {/* <img src={property.image} alt="" className="lg:w-full lg:h-[400px] md:w-full md:h-[300px] mx-auto mb-5 mt-5 dark:bg-gray-500 rounded-lg shadow-md lg:mt-10" /> */}
                 <div className="dark:bg-default-600 ">
                     <div className="container flex flex-col items-center px-4 py-5 pb-4 mx-auto text-center lg:pb-5 md:py-5 md:px-10 lg:px-32 dark:text-gray-50">
                         <div className='flex'>

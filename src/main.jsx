@@ -12,6 +12,7 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import PropertyDetails from './pages/PropertyDetails/PropertyDetails';
 import Services from './pages/Services/Services';
+import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 import { HelmetProvider } from 'react-helmet-async';
 import FirebaseProvider from './FirebaseProvider/FirebaseProvider';
 
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/property/:id',
-        element: <PropertyDetails></PropertyDetails>,
+        element: <ProtectedRoute><PropertyDetails></PropertyDetails></ProtectedRoute>,
         loader: () => fetch('/property.json')
       },
       {
@@ -43,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/service',
-        element: <Services></Services>
+        element: <ProtectedRoute><Services></Services></ProtectedRoute>
       }
     ]
   },

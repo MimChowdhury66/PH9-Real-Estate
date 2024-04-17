@@ -30,14 +30,14 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user?.email ? <div className="dropdown dropdown-end tooltip tooltip-bottom" data-tip={user.displayName}>
+                    user?.email ? <div className="dropdown dropdown-end tooltip tooltip-bottom z-[4]" data-tip={user.displayName}>
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar " >
                             <div className="w-10 rounded-full "  >
                                 <img src={user.photoURL} alt="" />
 
                             </div>
                         </label>
-                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <ul tabIndex={0} className="dropdown-content z-[4] menu p-2 shadow bg-base-100 rounded-box w-52">
                             <li><button onClick={logout} className="btn btn-sm btn-ghost">Logout</button></li>
                         </ul>
                     </div> :
