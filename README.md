@@ -1,5 +1,5 @@
 # Property Portal
-Live site url: 
+Live site url: https://real-estate-with-auth-57ef1.web.app/
 
 ## Motto- Discover immersive virtual property tours. Explore properties from the comfort of your home
 
