@@ -30,10 +30,10 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user?.email ? <div className="dropdown dropdown-end tooltip tooltip-bottom z-[4]" data-tip={user.displayName}>
+                    user ? <div className="dropdown dropdown-end tooltip tooltip-left z-[4]" data-tip={user?.displayName || 'name not found'}>
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar " >
                             <div className="w-10 rounded-full "  >
-                                <img src={user.photoURL} alt="" />
+                                <img src={user?.photoURL || 'https://avatars.githubusercontent.com/u/86664820?v=4'} alt="" />
 
                             </div>
                         </label>

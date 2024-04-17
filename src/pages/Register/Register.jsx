@@ -8,10 +8,10 @@ import { useForm } from "react-hook-form";
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
 
-    const { createUser, googleLogin, githubLogin } = useContext(AuthContext)
+    const { createUser, googleLogin, githubLogin, updateUserProfile } = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location)
+    // console.log(location)
     const {
         register,
         handleSubmit,
@@ -20,12 +20,15 @@ const Register = () => {
     } = useForm()
 
     const onSubmit = data => {
-        // console.log(data)
+        console.log(data)
         createUser(data.Email, data.password)
-            .then(result => {
-                if (result.user) {
-                    navigate(location?.state || '/')
-                }
+            .then(() => {
+                // navigate('/')
+                updateUserProfile(data.FullName, data.PhotoURL)
+                    .then(() => {
+                        navigate('/')
+                    })
+
             })
     }
 
