@@ -22,7 +22,7 @@ const Register = () => {
 
 
     const onSubmit = data => {
-        console.log(data)
+        // console.log(data)
         // console.log(typeof data.password, data.password.length)
 
         if (!/[A-Z]/.test(data.password)) {
