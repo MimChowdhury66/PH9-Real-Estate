@@ -66,6 +66,11 @@ const FirebaseProvider = ({ children }) => {
                 setLoading(false)
 
             }
+            else {
+                setUser(null);
+                setLoading(false)
+
+            }
         });
         return () => unsubscribe()
     }, [])
